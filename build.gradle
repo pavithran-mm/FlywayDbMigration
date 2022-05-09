@@ -1,5 +1,12 @@
+buildscript {
+    dependencies {
+        classpath 'com.h2database:h2:1.4.197'
+    }
+}
+
 plugins {
     id 'java'
+    id "org.flywaydb.flyway" version "8.5.10"
 }
 
 group 'org.example'
@@ -10,10 +17,17 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.postgresql:postgresql:42.3.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
 test {
     useJUnitPlatform()
+}
+
+flyway {
+    url = 'jdbc:postgresql://0.0.0.0:5432/flywaymigration'
+    user = 'postgres'
+    password = 'mysecretpassword'
 }
