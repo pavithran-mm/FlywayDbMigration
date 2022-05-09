@@ -27,7 +27,7 @@ test {
 }
 
 flyway {
-    url = 'jdbc:postgresql://0.0.0.0:5432/flywaymigration'
+    url = 'jdbc:postgresql://localhost:5432/flywaymigration'
     user = 'postgres'
     password = 'mysecretpassword'
 }
