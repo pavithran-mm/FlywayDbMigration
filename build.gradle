@@ -28,6 +28,4 @@ test {
 
 flyway {
     url = 'jdbc:postgresql://localhost:5432/flywaymigration'
-    user = 'postgres'
-    password = 'mysecretpassword'
 }
